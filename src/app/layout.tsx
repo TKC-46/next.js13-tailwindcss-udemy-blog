@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "./Footer";
-import "./globals.css";
 import Header from "./Header";
+import "./globals.css";
 
 
 
