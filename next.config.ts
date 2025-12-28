@@ -1,13 +1,14 @@
-import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+// next.config.js
+const nextConfig = {
   images: {
-    domains: [
-      "source.unsplash.com"
+    remotePatterns: [
+      { protocol: 'https', hostname: 'picsum.photos' },
+      { protocol: 'https', hostname: 'images.pexels.com' },
+      { protocol: 'https', hostname: 'cdn.pixabay.com' },
     ],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
+
