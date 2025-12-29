@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./globals.css";
+import Loading from "./loading";
 
 
 
@@ -20,7 +22,9 @@ export default function RootLayout({
     <html lang="ja">
       <body className="container mx-auto bg-slate-700 text-slate-200">
         <Header />
-        {children}
+        <Suspense fallback={<Loading />}>  {/* ロード中に表示するコンポーネントを指定 */}
+          {children}
+        </Suspense>
         <Footer />
       </body>
     </html>
