@@ -8,7 +8,7 @@ const Article = async ({ params }: { params: Promise<{ id: string }> }) => {
   return (
     <div className="max-w-3xl mx-auto p-5">
       <Image
-        src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+        src={`https://images.pexels.com/photos/${detailArticle.id}/pexels-photo-${detailArticle.id}.jpeg`}
         alt=""
         width={1280}
         height={300}
