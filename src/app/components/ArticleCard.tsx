@@ -6,6 +6,19 @@ type ArticleCardProps = {
   article: Article;
 };
 
+/**
+ * 記事カードコンポーネント。
+ * 指定された記事データを基に、記事の概要を表示します。
+ *
+ * @param {ArticleCardProps} props - コンポーネントのプロパティ。
+ * @param {object} props.article - 表示する記事データ。
+ * @param {string} props.article.id - 記事の一意の識別子。
+ * @param {string} props.article.title - 記事のタイトル。
+ * @param {string} props.article.content - 記事の内容。
+ * @param {string} props.article.createdAt - 記事の作成日時。
+ *
+ * @returns {JSX.Element} 記事カードのJSX要素。
+ */
 const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <article className="shadow my-4 flex-col" key={article.id}>
@@ -31,7 +44,8 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           {article.title}
         </Link>
         <p className="text-sm pb-3 text-slate-900">
-          published at {article.createdAt}
+          {/* 日付/YYYY/MM/DD/HH/mm/ss */}
+          published at {new Date(article.createdAt).toLocaleString()}
         </p>
         <a href={`articles/${article.id}`} className="text-slate-900 pd-6">
           {article.content.length > 70
