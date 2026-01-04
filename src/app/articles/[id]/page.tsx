@@ -7,7 +7,7 @@ const Article = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   const API_URL = process.env.NEXT_PUBLIC_SUPABASE_API_URL;
 
-  const res = await fetch(`${API_URL}/api${id}`, {
+  const res = await fetch(`${API_URL}/api/${id}`, {
     next: {
       revalidate: 10, // 10秒ごとに再検証
     },
