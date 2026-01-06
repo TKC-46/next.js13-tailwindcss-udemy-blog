@@ -1,3 +1,7 @@
+/**
+ * 記事詳細ページ
+ */
+
 import DeleteButton from "@/app/components/DeleteButton";
 import Image from "next/image";
 
@@ -7,7 +11,7 @@ const Article = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   const API_URL = process.env.NEXT_PUBLIC_SUPABASE_API_URL;
 
-  const res = await fetch(`${API_URL}/api/${id}`, {
+  const res = await fetch(`${API_URL}/api/blog/${id}`, {
     next: {
       revalidate: 10, // 10秒ごとに再検証
     },
