@@ -1,3 +1,7 @@
+/**
+ * 記事一覧コンポーネント
+ */
+
 import { Article } from "@/types";
 import ArticleCard from "./ArticleCard";
 

@@ -8,7 +8,7 @@ export default async function Home() {
   const API_URL = process.env.NEXT_PUBLIC_SUPABASE_API_URL;
 
   // pages/api/index.ts からデータを取得
-  const res = await fetch(`${API_URL}/api`, { cache: "no-store" }); // SSR対応のため、キャッシュを無効化
+  const res = await fetch(`${API_URL}/api/blog`, { cache: "no-store" }); // SSR対応のため、キャッシュを無効化
   const articles = await res.json();
 
   return (
